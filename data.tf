@@ -4,3 +4,17 @@ data "aws_availability_zones" "available"{  # used in locals.tf for  vpc.tf publ
 
     state = "available"
 }
+
+# for default vpc id
+data "aws_vpc" "default" {
+  default = true
+}
+
+# for default vpc's default route table main's id
+data "aws_route_table" "main" {
+  vpc_id = data.aws_vpc.default.id  # using above default vpc to get it's id
+  filter {
+    name = "association.main" # checks whether there is a main route associated with above vpc id
+    values = ["true"] 
+  }
+}

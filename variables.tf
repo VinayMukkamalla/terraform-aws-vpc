@@ -83,3 +83,13 @@ variable "nat_gateway_tags" {
   type = map 
   default = {}
 }
+
+
+# making peering connection optional using is_peering_required; is_peering_connection(true) ? 1(true) : 0(false) || module users can make this false 
+# passes to peering.tf 
+variable "is_peering_required" {
+  type = bool
+  default = true
+}
+
+
