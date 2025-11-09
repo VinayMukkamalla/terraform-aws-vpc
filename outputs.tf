@@ -9,7 +9,7 @@ output "public_subet_ids" {
 
 
 #providing private subnet ids as output to display on console
-output "public_subet_ids" {
+output "private_subet_ids" {
   value = module.aws_subnet.private[*].id
 }
 
