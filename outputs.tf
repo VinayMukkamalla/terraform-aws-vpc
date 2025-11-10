@@ -3,18 +3,18 @@ output "vpc_id" {
 }
 
 #providing public subnet ids as output to display on console
-output "public_subet_ids" {
+output "public_subnet_ids" {
   value = aws_subnet.public[*].id
 }
 
 
 #providing private subnet ids as output to display on console
-output "private_subet_ids" {
+output "private_subnet_ids" {
   value = aws_subnet.private[*].id
 }
 
 
 #providing database subnet ids as output to display on console
-output "database_subet_ids" {
+output "database_subnet_ids" {
   value = aws_subnet.database[*].id
 }
